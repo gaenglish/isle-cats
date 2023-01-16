@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Legend of the Isle of Cats - Allran</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+    <script type="application/javascript">
+
+      const ImageWidth = 1968;
+      const ImageHeight = 3000;
+
+      let root = document.querySelector(':root');
+
+      root.addEventListener("mousemove", e => {
+        root.style.setProperty('--mouse-x', e.clientX + "px");
+        root.style.setProperty('--mouse-y', e.clientY + "px");
+      });
+
+      function SetHeroHeight() {
+        var ratio = ImageHeight/ImageWidth;
+        var HeroHeight = window.innerWidth * ratio;
+
+        if (HeroHeight < 800 ) {
+          root.style.setProperty('--hero-height', HeroHeight + "px");
+        }
+
+
+      }
+
+      (function() {
+
+        SetHeroHeight();
+        window.onresize = SetHeroHeight;
+
+
+
+        // Tutorial: https://medium.com/@patrickwestwood/how-to-make-multi-layered-parallax-illustration-with-css-javascript-2b56883c3f27
+        window.addEventListener('scroll', function(event) {
+          var depth, i, layer, layers, len, movement, topDistance, translate3d;
+          topDistance = this.pageYOffset;
+          layers = document.querySelectorAll("[data-type='parallax']");
+          for (i = 0, len = layers.length; i < len; i++) {
+            layer = layers[i];
+            depth = layer.getAttribute('data-depth');
+            movement = -(topDistance * depth);
+            translate3d = 'translate3d(0, ' + movement + 'px, 0)';
+            layer.style['-webkit-transform'] = translate3d;
+            layer.style['-moz-transform'] = translate3d;
+            layer.style['-ms-transform'] = translate3d;
+            layer.style['-o-transform'] = translate3d;
+            layer.style.transform = translate3d;
+          }
+        });
+
+      }).call(this);
+
+
+
+
+      function handleBuyNow() {
+        window.open("https://redhawkpublications.com/Legend-of-the-Isle-of-Cats-The-p510216239");
+      }
+
+    </script>
+
+    <style>
+
+        :root {
+            --hero-height: 800px;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #130d0a;
+            font-family: "Playfair Display", serif;
+            color: #fff;
+        }
+
+        #content {
+            background-color: #130d0a;
+        }
+
+        .first-section {
+            padding: 50px 0 20px 0;
+        }
+
+        .text-header {
+            font-size: 50px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Alice', serif;
+            line-height: 120%;
+            font-size: 3rem;
+            color: #FFDFDFFF;
+        }
+
+        h2 {
+            margin-bottom: 0;
+            color: #FFDFDFFF;
+        }
+
+        p {
+            color: #ede0d5;
+            font-size: 18px;
+            line-height: 150%;
+        }
+
+        a {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: underline;
+        }
+        a:hover {
+            color: #ede0d5;
+        }
+
+        #hero {
+
+            overflow: hidden;
+            position: relative;
+        }
+
+
+        .layer {
+            background-position: bottom center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100%;
+            position: fixed;
+            z-index: -1;
+        }
+
+        #hero,
+        .layer {
+            height: var(--hero-height);
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+
+        .background {
+            background-image: url("assets/isle-cats-cover-_0007_Background.png");}
+        .title {
+            background-image: url("assets/isle-cats-cover-_0000_title.png");}
+        .island {
+            background-image: url("assets/isle-cats-cover-_0003_Island.png");}
+        .reflections {
+            background-image: url("assets/isle-cats-cover-_0002_Reflections.png");}
+        .boat {
+            background-image: url("assets/isle-cats-cover-_0001_Boat.png");
+        }
+        .foreground {
+            background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_01.png");
+            background-position: bottom center; }
+
+        div.portrait-frame {
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        img.portrait {
+            width: 80%;
+        }
+
+
+        ul#product-details {
+            padding: 20px 0;
+            list-style: url('assets/anchor.svg');
+        }
+
+        ul#product-details li {
+            color: #E8D5C7FF;
+            height: 20px;
+            line-height: 20px;
+            margin-bottom: 8px;
+            list-style-position: inside;
+            vertical-align: text-top;
+        }
+
+        ul#product-details li::marker {
+            padding-top: 4px;
+        }
+
+        .buy-now-row {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+
+        .buy-now-row-button  {
+           appearance: none;
+           background-color: transparent;
+           border: 2px solid #FFDFDFFF;
+           border-radius: 15px;
+           box-sizing: border-box;
+           color: #FFDFDFFF;
+           cursor: pointer;
+           display: inline-block;
+           font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+           font-size: 16px;
+           font-weight: 600;
+           line-height: normal;
+           margin: 0;
+           min-height: 60px;
+           min-width: 0;
+            max-width: 360px;
+           outline: none;
+           padding: 16px 24px;
+           text-align: center;
+           text-decoration: none;
+           transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+           user-select: none;
+           -webkit-user-select: none;
+           touch-action: manipulation;
+           width: 100%;
+           will-change: transform;
+       }
+
+        .buy-now-row-button:disabled {
+            pointer-events: none;
+        }
+
+        .buy-now-row-button:hover {
+            color: #530101FF;
+            background-color: #FFDFDFFF;
+            box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+            transform: translateY(-2px);
+        }
+
+        .buy-now-row-button:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
+
+
+        .footer {
+            color: #BF0505FF;
+        }
+
+        hr {
+            border-top: 1px solid #FFDFDFFF;
+            margin: 4px 0 ;
+        }
+
+        .footer hr {
+            border-top: 1px solid #725a5a;
+        }
+
+        .footer p {
+            color: #725a5a;
+        }
+
+
+        @media only screen and (max-width: 800px) {
+            #hero {
+
+            }
+
+            h1 {
+                line-height: 120%;
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                line-height: 120%;
+                font-size: 2rem;
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div id='hero'>
+    <div class='background layer' data-depth='0.35' data-type='parallax'></div>
+    <div class='island layer' data-depth='0.39' data-type='parallax'></div>
+    <div class='reflections layer' data-depth='0.36' data-type='parallax'></div>
+    <div class='boat layer' data-depth='0.60' data-type='parallax'></div>
+    <div class='title layer' data-depth='0.08' data-type='parallax'></div>
+    <div class='foreground layer' data-depth='1.00' data-type='parallax'></div>
+</div>
+
+<div id='content'>
+
+    <div class='container'>
+
+        <section class='first-section'>
+
+            <div class='row'>
+                <div class='col-sm-12'>
+                    <h1>A man haunted by a murder journeys to a desert island to escape, and there he finds the treasure of forgiveness and peace through God.</h1>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-sm-7'>
+
+                    <p>
+                        No one shoult be put off a boat, alone, on a desert island -- especially this one: No one ever went to the Isle of Cats.
+                        But here we were, with night all around us and the storm raging. If we did not find shelter soon, the lighting would strike us dead;
+                        the rain and rising tide would drown us.  And it was cold.  At the very least, we would catch our death from that.
+                    </p>
+
+                    <p>
+                        And then, lurking about in the dunes, were--large, misshapen, hungry. Eyeing us.
+                    </p>
+                    <p>
+                        "Whatever you do, stay away from the house.  Don't you go near that house," the boatman had told us. And we told him we wouldn't.
+                    </p>
+                    <p>But what choice did we have?  We saw a light.</p>
+                    <p>Did anyone really have a choice?</p>
+
+
+
+                    <h2>Product details</h2>
+                    <hr />
+                    <hr />
+                    <ul id="product-details">
+                        <li>Publisher ‏ : ‎ Redhawk Publications (November 17, 2022)</li>
+                        <li>Language ‏ : ‎ English</li>
+                        <li>Paperback ‏ : ‎ 517 pages</li>
+                        <li>ISBN-10 ‏ : ‎ 1952485908</li>
+                        <li>ISBN-13 ‏ : ‎ 978-1952485909</li>
+                        <li>Item Weight ‏ : ‎ 1.9 pounds</li>
+                        <li>Dimensions ‏ : ‎ 6 x 1.3 x 9 inches</li>
+                    </ul>
+
+                    <div class="buy-now-row">
+                        <button class="buy-now-row-button" onclick="handleBuyNow()">Buy Now</button>
+                    </div>
+
+
+                </div>
+
+                <div class='col-sm-5'>
+
+                    <h2>About the author</h2>
+                    <hr /><hr />
+                    <div class="portrait-frame">
+                        <img class="portrait" src="assets/Austin_Allran.jpg">
+                    </div>
+
+                    <div>
+                        <p>Austin Allran—writer, attorney and elected official—has written numerous short stories, poems and newspaper articles. He has received awards from the N.C. Writers’ Network (short story) and the Hugh T. Lefler Award (historical biography).</p>
+                        <p><i>The Legend of the Isle of Cats</i> is his first novel. </p>
+                        <p>A life-long resident of Hickory, North Carolina, Austin lives there with his wife, Judy. He is a proud father and grandfather.</p>
+                        <p>Contact him at <a href="mailto:allran@islecats.com">allran@islecats.com</a></p>
+                    </div>
+                </div>
+
+                <div class='row text-center'>
+                    <div class='col-sm-12 footer'>
+                        <hr/><hr/>
+
+                        <div class='row'>
+                            <div class='col-sm-4'>
+
+                            </div>
+                            <div class='col-sm-4'>
+
+                            </div>
+                            <div class='col-sm-4'>
+                                <img src="assets/redhawk-logo.png" width="150x" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
