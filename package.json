@@ -1,0 +1,23 @@
+{
+  "name": "isle-cats",
+  "version": "1.0.0",
+  "description": "islecats.com",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaenglish/isle-cats.git"
+  },
+  "keywords": [
+    "book",
+    "allran"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaenglish/isle-cats/issues"
+  },
+  "homepage": "https://github.com/gaenglish/isle-cats#readme"
+}
